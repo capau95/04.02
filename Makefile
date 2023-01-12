@@ -1,17 +1,17 @@
-HEADERS = kbfunc.h
+HEADERS = vergleich.h
 
-all: kb kbfunc
+all: vergleichmain vergleich
 
-kb.o: kb.c
-	gcc -c kb.c -o kb.o
+vergleichmain.o: vergleichmain.c
+	gcc -c vergleichmain.c -o vergleichmain.o
 
-kbfunc.o: kbfunc.c
-	gcc -c kbfunc.c -o kbfunc.o
+vergleich.o: vergleich.c
+	gcc -c vergleich.c -o vergleich.o
 
-kb: kb.o kbfunc.o
-	gcc kb.o kbfunc.o -o kb
+vergleichmain: vergleichmain.o vergleich.o
+	gcc vergleichmain.o vergleich.o -o vergleichmain
 
 clean: 
-	-rm -f kb.o	
-	-rm -f kbfunc.o
-	-rm -f kb
+	-rm -f vergleichmain.o	
+	-rm -f vergleich.o
+	-rm -f vergleichmain
